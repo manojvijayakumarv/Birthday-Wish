@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sowmiya – The Main Character of Today 🎬💗</title>
+<meta name="description" content="A cinematic birthday surprise for Sowmiya." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- decorative layers -->
+<div id="heartsLayer" aria-hidden="true"></div>
+<div id="confettiLayer" aria-hidden="true"></div>
+
+<!-- optional opening film (plays if assets/movie.mp4 exists) -->
+<video id="openingMovie" playsinline muted></video>
+
+<!-- top controls: music mute/unmute + replay -->
+<div class="controls">
+  <button id="muteBtn" class="ctrl-btn" type="button" aria-label="Mute music">🔊</button>
+  <button id="replayBtn" class="ctrl-btn replay-text" type="button" aria-label="Replay the birthday movie"><span>Replay</span> 🎬</button>
+</div>
+<audio id="bgm" loop preload="auto"><source src="assets/music.wav" type="audio/wav" /><source src="assets/music.mp3" type="audio/mpeg" /></audio>
+
+<!-- ============ 0. ENTRY GATE: password, then balloons ============ -->
+<div id="gate">
+  <!-- Step 1: password (her date of birth) -->
+  <form id="loginCard" class="gate-card" autocomplete="off">
+    <div class="gate-icon">🔐</div>
+    <h1 class="serif">A Surprise Awaits</h1>
+    <p class="gate-sub">Enter the secret password to open it</p>
+    <label for="gatePass" class="gate-label">Hint: your date of birth (numbers only)</label>
+    <input id="gatePass" type="password" inputmode="numeric" placeholder="DDMMYYYY" aria-describedby="gateErr" required />
+    <button id="gateBtn" type="submit">Unlock 💗</button>
+    <div id="gateErr" class="gate-err" role="alert"></div>
+  </form>
+
+  <!-- Step 2: pop the balloons -->
+  <div id="balloonStage" class="balloon-stage" hidden>
+    <h2 class="serif">Pop the balloons 🎈</h2>
+    <p class="gate-sub" id="balloonHint">Tap each balloon to see what's inside</p>
+    <div class="balloon-row" id="balloonRow"></div>
+    <div id="balloonMsg" class="balloon-msg" aria-live="polite"></div>
+    <button id="balloonNext" type="button" hidden>Continue to the movie 🎬</button>
+  </div>
+</div>
+
+<!-- ============ 1. CINEMATIC OPENING ============ -->
+<div id="opening">
+  <div class="reel" aria-hidden="true"></div>
+  <p id="openLine1" class="serif"></p>
+  <p id="openLine2" class="script"></p>
+  <button id="startBtn" type="button">Start Your Birthday Movie 🎬</button>
+</div>
+
+<!-- name band -->
+<div class="name-band">
+  <div class="big script">Sowmiya</div>
+  <div class="sub">The Main Character of Today</div>
+</div>
+
+<!-- ============ 2. BIRTHDAY GIRL INTRODUCTION ============ -->
+<section id="intro"><div class="pad">
+  <div class="head">
+    <span class="kicker">Now Showing</span>
+    <h2 class="serif">Meet the Birthday Girl – Sowmiya!</h2>
+    <p>A little film of our favourite person 🎬</p>
+  </div>
+  <div class="slideshow">
+    <div class="slide-stage" id="slideStage"></div>
+    <button class="slide-nav prev" id="slidePrev" type="button" aria-label="Previous photo">‹</button>
+    <button class="slide-nav next" id="slideNext" type="button" aria-label="Next photo">›</button>
+  </div>
+  <p class="slide-caption" id="slideCaption"></p>
+</div></section>
+
+<!-- ============ 3. OUR LITTLE MEMORIES ============ -->
+<section id="memories"><div class="pad">
+  <div class="head">
+    <span class="kicker">The Scrapbook</span>
+    <h2 class="serif">Our Little Memories</h2>
+    <p>Tap the captions in script.js to make them ours 💫</p>
+  </div>
+  <div class="polaroid-grid" id="polaroidGrid"></div>
+</div></section>
+
+<!-- ============ 24 LITTLE REASONS ============ -->
+<section id="reasons"><div class="pad">
+  <div class="head">
+    <span class="kicker">For You</span>
+    <h2 class="serif">24 Little Reasons to Smile ❤️</h2>
+    <p>Tap each card to reveal a reason</p>
+  </div>
+  <div class="reason-grid" id="reasonGrid"></div>
+</div></section>
+
+<!-- ============ 6. SCRATCH-TO-REVEAL ============ -->
+<section id="scratch"><div class="pad">
+  <div class="head">
+    <span class="kicker">A Little Surprise</span>
+    <h2 class="serif">Scratch to Reveal 🎁</h2>
+  </div>
+  <div class="scratch-wrap" id="scratchWrap">
+    <div class="scratch-reveal"><p id="scratchMessage"></p></div>
+    <canvas id="scratchCanvas"></canvas>
+  </div>
+  <div class="scratch-done" id="scratchDone">
+    <button class="btn-gold" id="lastSurpriseBtn" type="button">One Last Surprise...</button>
+  </div>
+</div></section>
+
+<!-- ============ 7. PERSONAL LETTER ============ -->
+<section id="letterSection"><div class="pad">
+  <div class="head">
+    <span class="kicker">From the Heart</span>
+    <h2 class="serif">A Letter For You 💌</h2>
+    <p>Tap the envelope to open it</p>
+  </div>
+  <div class="envelope-wrap">
+    <div class="envelope" id="envelope" tabindex="0" role="button" aria-label="Open the birthday letter">
+      <div class="env-body"></div>
+      <div class="env-letter"><p class="env-hint">💌 A letter for Sowmiya</p></div>
+      <div class="env-flap"></div>
+      <div class="env-pocket"></div>
+    </div>
+    <div class="letter-full" id="letterFull">
+      <div id="letterBody"></div>
+      <div class="sign" id="letterSign"></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ 8. FINAL CELEBRATION ============ -->
+<section id="celebration"><div class="pad">
+  <div class="head">
+    <span class="kicker">The Grand Finale</span>
+    <h2 class="serif">Make a Wish 🎂</h2>
+    <p>Blow out the 24 candles</p>
+  </div>
+  <div class="cake-wrap">
+    <div class="cake">
+      <div class="candles" id="candles"></div>
+      <div class="cake-tier cake-top"></div>
+      <div class="cake-tier cake-mid"></div>
+      <div class="cake-tier cake-base"></div>
+    </div>
+    <button class="blow-btn" id="blowBtn" type="button">Blow Out the Candles 🌬️</button>
+    <div class="finale" id="finale">
+      <div class="big" id="big"></div>
+      <div class="small" id="small"></div>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="heart">💝</div>
+  <small>Made with love by Manojuhh for Sowmiya's 24th birthday • November 20</small>
+</footer>
+
+<script src="script.js"></script>
+<!-- simple scroll-reveal for sections -->
+<script>
+  const _io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); }), { threshold: .12 });
+  document.querySelectorAll('.reveal, .head, .slideshow, .polaroid-grid, .reason-grid, .scratch-wrap, .envelope-wrap, .cake-wrap').forEach(el => { el.classList.add('reveal'); _io.observe(el); });
+</script>
+</body>
+</html>
