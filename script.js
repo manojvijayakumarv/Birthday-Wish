@@ -159,7 +159,7 @@ function photoEl(fileIndex, labelIcon, labelText) {
   const img = document.createElement("img");
   img.alt = "A photo of Sowmiya";
   img.loading = "lazy";
-  img.src = `photos/${pad2(fileIndex)}.jpg`;
+  img.src = `${pad2(fileIndex)}.jpg`;
   img.addEventListener("load", () => { img.classList.add("loaded"); });
   img.addEventListener("error", () => { img.remove(); }); // leave placeholder visible
   wrap.appendChild(ph);
@@ -276,7 +276,7 @@ function buildOpening() {
     const probe = document.createElement("video");
     probe.addEventListener("loadeddata", () => { movie.dataset.hasSource = "true"; }, { once: true });
     probe.addEventListener("error", () => { movie.dataset.hasSource = "false"; }, { once: true });
-    probe.src = "assets/movie.mp4";
+    probe.src = "movie.mp4";
   }
 }
 
@@ -532,7 +532,7 @@ function initMusic() {
   const probe = document.createElement("audio");
   probe.addEventListener("canplay", () => { audioReady = true; }, { once: true });
   probe.addEventListener("error", () => { audioReady = false; }, { once: true });
-  probe.src = "assets/music.wav";
+  probe.src = "music.wav";
 
   let muted = false;
   btn.addEventListener("click", () => {
