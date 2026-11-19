@@ -99,12 +99,15 @@ const CONTENT = {
 
   // ----- Personal letter -----
   letter: [
-    "Dear Sowmiya,",
-    "I know things haven't been the same lately, and I know I've disappointed you. Maybe I didn't handle some things properly, and I'm sorry for that. I never wanted things to become awkward between us.",
-    "I don't want small misunderstandings or difficult situations to change the bond we share. We've had so many laughs, silly conversations and fun moments. I really miss those days, and I hope we have many more like them.",
-    "I may not say it often, but I truly care about you and your happiness. I hope we can leave all the awkward moments behind and get back to being our usual selves.",
-    "Keep smiling, stay happy and never lose your crazy side. And please don't stop irritating me! 😂",
-    "Happy Birthday, Sowmiya! Wishing you lots of happiness and beautiful memories. ❤️",
+    "Happy Birthday Sowmiya ❤️🫶🏻",
+    "Honestly, I don't even know where to start. We've literally grown up together, shared so many memories, had countless laughs, fought over stupid things and irritated each other in every possible way 😂. But at the end of the day, you're someone I'll always be grateful to have in my life.",
+    "You're not just my cousin, you're my childhood, my best friend and one of my favourite people. No matter how much we fight or how much we annoy each other, there's always going to be a special place for you in my life that nobody else can replace.",
+    "I know we don't always express things properly, and sometimes we might not talk or behave the way we used to, but that doesn't change how much you mean to me. I hope you always remember that you have someone in me, no matter what happens.",
+    "I want us to travel to all those places we've talked about, try new things, make stupid memories and keep laughing at the same old jokes. We still have so much life to live and so many memories to create together.",
+    "I genuinely wish you get everything you've been dreaming of. Keep smiling, keep being your crazy self and never let anything take away your happiness. And don't think you'll ever get rid of me that easily 😂.",
+    "Thank you for being a part of my life and making my childhood and growing-up years so special.",
+    "LOVE YOU SO MUCHHH! ❤️🫂",
+    "Once again, happiest birthday to my forever favourite person. Let's make many more memories together! ❤️",
   ],
 
   // ----- Final messages -----

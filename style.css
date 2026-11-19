@@ -164,7 +164,7 @@ section{position:relative;z-index:2;}
 .env-hint{color:var(--muted);font-size:.8rem;letter-spacing:1px;}
 .letter-full{max-width:620px;margin:26px auto 0;background:#fff;border-radius:16px;padding:30px;box-shadow:var(--shadow);
   max-height:0;overflow:hidden;opacity:0;transition:all .7s var(--ease);}
-.envelope.open ~ .letter-full{max-height:1000px;opacity:1;padding:30px;margin-top:26px;}
+.envelope.open ~ .letter-full{max-height:4000px;opacity:1;padding:30px;margin-top:26px;}
 .letter-full p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.7;color:var(--ink);margin-bottom:12px;}
 .letter-full .sign{font-family:'Great Vibes',cursive;font-size:1.9rem;color:var(--pink-deep);text-align:right;margin-top:10px;}
 
